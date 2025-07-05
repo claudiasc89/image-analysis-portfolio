@@ -49,7 +49,7 @@ For example, if set to 1 it will project 3 slices: (best focused-1, best focused
 - Processes 3D image stacks for each time-point for subsequent analysis and processing.
 
 **Automatically determines best focused plane**
-- Uses a standard method based on standard deviation to find the best focused slice.
+- Uses a standard method based on standard deviation to find the best focused slice, to know [more](https://claudiasc89.github.io/imganalysis3/docs/processing/zproj_bestfocus/).
 - Calculates the range of slices to include in the projection (slices below and above the central one). It controls that the output of this calculations does not exceed the image dimensions. For instance if the best focused slice is the 4 out of 5 and we have determined a z-range of two, it will short down the range to the edges. 
 
 **Projection**
