@@ -15,7 +15,7 @@ I am always open to give someone a hand or solve new challenges. Don't hesitate 
 
 ### 🧪 Image processing
 
-- [📁 1. Automatic z-projections](./automatic-z-projections/README.md)  
+- [📁 1. Automatic z-projections](./automatic-z-projections/)  
 *Generating automatic z-projections for microscopy image stacks.*
 
 ### 🔬 Image analysis
