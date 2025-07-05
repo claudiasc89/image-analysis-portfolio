@@ -1,15 +1,25 @@
 # Automatic z-Projections
 
-This module generates automatic z-projections from microscopy image stacks (e.g. multi-slice TIFF files). It uses common projection methods to create 2D images suitable for analysis or visualization.
+This module generates automatic z-projections from microscopy image stacks (e.g. multi-slice TIFF files). It uses common projection methods to create z-projected images suitable for analysis or visualization.
 The script is designed to be run on your favorite code editor.
 ---
+
+
+## ⚙️ Requirements
+
+- **`file types`**: 
+Runs exclusively on .tif files.
+
+- **`file dimensions`**: 
+Designed to process time-lapse microscopy data.
+It requires 4D files with dimensions organised as **(time, z-stacks, x , y)**.
 
 
 ## 🗂️ Define parameters 
 
 The script requires the following parameters
 
--**`folder`** *(str)*
+- **`folder`** *(str)*:
 Path to the folder containing the `.tif` files to be processed.
 
 - **`channels`** *(list of str)*:  
@@ -32,25 +42,20 @@ For example, if set to 1 it will project 3 slices: (best focused-1, best focused
 
 ## 🔎 Step-by-Step Breakdown
 
-** Load the z-stack image **
+**Select and load the z-stack image**
+- Iterates over the files on the folder to select the ones with the specified `channel name`. It imports the selected file.
 
-- Reads a multi-slice 3D or 4D (containing time-points) TIFF file (.tif)
+**Loop over time-points**
+- Processes 3D image stacks for each time-point for subsequent analysis and processing.
 
+**Automatically determines best focused plane**
+-Uses a standard method based on standard deviation to find the best focused slice.
+-Calculates the range of slices to include in the projection (slices below and above the central one).  
 
+**Projection**
+-Performs the specified projection method (e.g., maximum or mean intensity).
 
+**Save projected image and report**
+- Saves the projected image to the output folder, maintaining the original filename with a suffix indicating the projection.  
+- Creates an Excel report detailing the range of z-slices used for each timepoint and image.
 
-What it does: Finds which Z-slice is most in focus
-How: Calculates standard deviation for each slice (higher = more focused)
-Returns: The index of the best-focused slice
-
-
-What it does: Combines multiple Z-slices into one 2D image
-Options: Maximum projection (brightest pixel) or mean projection (average)
-
-
-
--
-- Maximum intensity projection
-- Mean intensity projection
-- Customizable input/output paths
-- Easy command-line interface (optional)
