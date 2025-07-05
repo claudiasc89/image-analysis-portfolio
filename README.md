@@ -1,9 +1,9 @@
 
 ## 👤 About Me
-Hi! I’m Clàudia, currently a Post-doctoral scientist with experience in developing bio-image analysis pipelines using Python and deep learning. My area of expertise is in microscopy of biological samples and quantitative imaging, and I am currently seeking for opportunities to apply this skills in advanced microscopy and image analysis projects.
+Hi! I’m Clàudia -currently a Post-doctoral scientist at University of Lausanne- with experience in developing bio-image analysis pipelines using Python and deep learning. My area of expertise is in microscopy of biological samples and quantitative imaging, and I am currently seeking for opportunities to apply this skills in advanced microscopy and image analysis projects.
 
-- 📫 [Email](mailto:claudia.salat.canela@gmail.com)
-- 🌐 [LinkedIn](https: https://www.linkedin.com/in/claudia-salat-canela/)
+- 📫 claudia.salat.canela@gmail.com
+- 🌐 [LinkedIn profile](https://www.linkedin.com/in/claudia-salat-canela/)
 
 
 # 🖼️ Image Analysis Portfolio
@@ -20,5 +20,5 @@ I am always open to give someone a hand or solve new challenges. Don't hesitate 
 
 ### 🔬 Image analysis
 
-- [📁 1. Creating a segmentation model with CellPose] (./cellpose-segmentation/README.md)
+- [📁 1. Creating a segmentation model with CellPose](./cellpose-segmentation/README.md)
 *Training and applying a custom CellPose model for cell segmentation.*
