@@ -21,6 +21,7 @@ The dataset is organized into:
 - **Training images**: Used to teach the model what features correspond to cell masks.
 - **Test images**: Used to evaluate the model by comparing its predicted segmentations against the ground-truth masks.
 
+```
 project/
  └── data/
       ├── train/
@@ -35,14 +36,15 @@ project/
            ├── image_02.tiff
            ├── image_02_masks.tiff
            └── ...
+```
 
 All images and masks are pre-aligned and share the same dimensions, ensuring compatibility with Cellpose training workflows.
 
 > 💡 **Tip:** Imaging is not always perfect. To create a more robust model, consider adding perturbations to a small fraction (~10%) of your training set. This helps the model generalize to variations it might see in real data.
 
-Some ways to do this:  
-- Create mean projections from slightly **unfocused** z-stacks.  
-- Adjust **brightness or contrast** to simulate uneven illumination.  
+> Some ways to do this:  
+> - Create mean projections from slightly **unfocused** z-stacks.  
+> - Adjust **brightness or contrast** to simulate uneven illumination.  
 
 
 ## Training commands 
