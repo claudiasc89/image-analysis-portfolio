@@ -16,7 +16,7 @@ In this project, we will train **two models** using the same underlying images b
 
 Each image has a corresponding manually drawn mask, created using a drawing pad. For mask annotation, I recommend using [Napari](https://napari.org/) for its ease of use and precise labeling tools.  
 
-![Example segmentation mask](./figures/segmentation_mask_ex.tif)  
+![Example segmentation mask](./figures/segmentation_masks_ex.tif)  
 **Figure 1. Close-up area of a brightfield mean3 projection with its manually annotated segmentation mask for an S. pombe brightfield images. Each color shade in the segmentation masks correspond to a different annotated label.*
 
 The dataset is organized into:
