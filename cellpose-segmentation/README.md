@@ -101,4 +101,15 @@ python -m cellpose --train \
 
 > 💡 **Tip:** Cellpose expects your input masks files to be named like the images but wiht `_masks` at the end. If you are using different naming scheme, you can add to the command `--mask_filter your_fav_name_for_masks` and you can do the same for the input images `--img_filter fav_images_name`.
 
+### **What happens during training?**
+
+- Cellpose uses the images and corresponding masks in your training set to fine-tune the selected pretrained model (`cyto3` in this case).  
+- During training, Cellpose computes **flows** (vector fields) that describe cell boundaries and shapes. These flows are part of the learned representation and help the model predict accurate masks. Flows files will appear in the test and training folders. 
+- The training process runs for the specified number of epochs (here, 1000), validating periodically on your test set.  
+- At the end of training, Cellpose saves a **new model directory** (typically in the `models/` folder) containing the learned model.  
+
+You can then use this custom model for segmenting new images!
+
 ## Models evaluation
+
+But how do we assess whether the brand new model we have generated is good enough?
