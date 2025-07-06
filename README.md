@@ -20,5 +20,5 @@ I am always open to give someone a hand or solve new challenges. Don't hesitate 
 
 ### 🔬 Image analysis
 
-- [📁 1. Creating a segmentation model with CellPose](./cellpose-segmentation/README.md)
+- [📁 1. Creating a segmentation model with CellPose](./cellpose-segmentation/)
 *Training and applying a custom CellPose model for cell segmentation.*
