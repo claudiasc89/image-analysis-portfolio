@@ -3,7 +3,7 @@
 This module generates automatic z-projections from microscopy image stacks (e.g. multi-slice TIFF files). It uses common projection methods to create z-projected images suitable for analysis or visualization.
 The script is designed to be run on your favorite code editor.
 ---
-
+Find the script [here](./z-projection_v2.py)
 
 ## ⚙️ Requirements
 
