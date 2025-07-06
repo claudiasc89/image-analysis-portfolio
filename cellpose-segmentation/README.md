@@ -63,6 +63,7 @@ python -m cellpose --train \
   --weight_decay 0.0001 \
   --n_epochs 1000 \
   --verbose
+```
 
 ### **Explanation of command options**
 
