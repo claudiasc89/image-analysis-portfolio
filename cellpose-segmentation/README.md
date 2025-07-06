@@ -16,10 +16,13 @@ In this project, we will train **two models** using the same underlying images b
 
 Each image has a corresponding manually drawn mask, created using a drawing pad. For mask annotation, I recommend using [Napari](https://napari.org/) for its ease of use and precise labeling tools.  
 
+![Example segmentation mask](./figures/segmentation_mask_ex.tif)  
+**Figure 1. Close-up area of a brightfield mean3 projection with its manually annotated segmentation mask for an S. pombe brightfield images. Each color shade in the segmentation masks correspond to a different annotated label.*
+
 The dataset is organized into:
 
-- **Training images**: Used to teach the model what features correspond to cell masks.
-- **Test images**: Used to evaluate the model by comparing its predicted segmentations against the ground-truth masks.
+- **Training images**: Used to teach the model what features correspond to cell masks. *(27 images with corresponding masks)*
+- **Test images**: Used to evaluate the model by comparing its predicted segmentations against the ground-truth masks. *(5 images with corresponding masks)*
 
 ```
 project/
@@ -41,7 +44,6 @@ project/
 All images and masks are pre-aligned and share the same dimensions, ensuring compatibility with Cellpose training workflows.
 
 > 💡 **Tip:** Imaging is not always perfect. To create a more robust model, consider adding perturbations to a small fraction (~10%) of your training set. This helps the model generalize to variations it might see in real data.
-
 > Some ways to do this:  
 > - Create mean projections from slightly **unfocused** z-stacks.  
 > - Adjust **brightness or contrast** to simulate uneven illumination.  
