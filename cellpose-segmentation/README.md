@@ -117,7 +117,7 @@ To evaluate it, we'll use the **Adjusted Rand Index (ARI)** from the `sklearn` p
 
 For this evaluation, we'll need a separate test set of images (here, I've used 5), each with its manually curated mask. We'll run these test images through our trained model to generate predicted segmentation masks. Then we'll compute the ARI to measure the agreement between the predicted and manual masks.
 
-In simple terms, ARI tells us how consistently the model assigns pixels to the same segments as the manually curated ground truth. A higher ARI indicates better agreement, meaning our model is segmenting images more accurately.
+In simple terms, ARI tells us how consistently the model assigns pixels to the same segments as the manually curated ground truth. A higher ARI indicates better agreement, meaning our model is segmenting images more accurately. To test your own masks you can use this [Python script](./ARI_evaluation.py).
 
 ![Figure showing ARI results](./figures/ARI_figure.png)  
 **Figure 2. Box-plot showing the results of Adjusted Rand Index for the generalist model (`regular_mean2`) and the phenotype-specific models (`specific_mean2` and `specific_mean3`), computed on 5 different images*
