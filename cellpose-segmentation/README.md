@@ -46,7 +46,6 @@ All images and masks are pre-aligned and share the same dimensions, ensuring com
 > 💡 **Tip:** Imaging is not always perfect. To create a more robust model, consider adding perturbations to a small fraction (~10%) of your training set. This helps the model generalize to variations it might see in real data.
 > Some ways to do this:  
 > - Create mean projections from slightly **unfocused** z-stacks.  
-> - Adjust **brightness or contrast** to simulate uneven illumination.  
 
 
 ## ⚙️ Training Command
@@ -99,7 +98,7 @@ python -m cellpose --train \
 - **`--verbose`**  
   Enables detailed logging output during training.
 
-> 💡 **Tip:** Cellpose expects your input masks files to be named like the images but wiht `_masks` at the end. If you are using different naming scheme, you can add to the command `--mask_filter your_fav_name_for_masks` and you can do the same for the input images `--img_filter fav_images_name`.
+> 💡 **Tip:** Cellpose expects your input masks files to be named like the images but with `_masks` at the end. If you are using different naming scheme, you can add to the command `--mask_filter your_fav_name_for_masks` and you can do the same for the input images `--img_filter fav_images_name`.
 
 ### **What happens during training?**
 
@@ -110,6 +109,18 @@ python -m cellpose --train \
 
 You can then use this custom model for segmenting new images!
 
-## Models evaluation
+## Models' evaluation
 
-But how do we assess whether the brand new model we have generated is good enough?
+How do we assess whether our newly trained CellPose model is performing well?
+
+To evaluate it, we'll use the **Adjusted Rand Index (ARI)** from the `sklearn` package. ARI is a metric for comparing the similarity between two clusterings—in this case, the ground truth segmentation and the model's predicted segmentation.
+
+For this evaluation, we'll need a separate test set of images (here, I've used 5), each with its manually curated mask. We'll run these test images through our trained model to generate predicted segmentation masks. Then we'll compute the ARI to measure the agreement between the predicted and manual masks.
+
+In simple terms, ARI tells us how consistently the model assigns pixels to the same segments as the manually curated ground truth. A higher ARI indicates better agreement, meaning our model is segmenting images more accurately.
+
+![Figure showing ARI results](./figures/ARI_figure.png)  
+**Figure 2. Box-plot showing the results of Adjusted Rand Index for the generalist model (`regular_mean2`) and the phenotype-specific models (`specific_mean2` and `specific_mean3`), computed on 5 different images*
+
+To conclude, we can see that both `specific_mean2` and `specific_mean3` show significant improvements in segmentation, producing masks that are almost identical to the manually generated ones.
+
