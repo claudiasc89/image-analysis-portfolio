@@ -25,3 +25,5 @@ I am always open to give someone a hand or solve new challenges. Don't hesitate 
 
 - [📁 2. Creating a segmentation model with thresholding](./thresholding-segmentation/)
 *Using fluorescent intensity to discern cell regions*
+
+- [📁 3. Creating a classifier to distinguish different types of blood cells](./classifier/)
