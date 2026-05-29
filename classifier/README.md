@@ -39,4 +39,4 @@ Data was obtained from this [publication](https://www.nature.com/articles/s41597
 
 ## 🔎 Graphical explanation 
 
-![Graphical explanation of the classifier workflow] (./figures/classifier_workflow.png)
+![Graphical explanation of the classifier workflow](./figures/classifier_workflow.png)
